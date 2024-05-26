@@ -17,7 +17,7 @@ commands here
 
 Here you should say what actually happens when you execute the code above. -->
 
-## Developing
+<!-- ## Developing -->
 
 <!-- ### Built With
 List main libraries, frameworks used including versions (React, Angular etc...)
@@ -26,7 +26,11 @@ List main libraries, frameworks used including versions (React, Angular etc...)
 What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links. -->
 
 
-### Setting up Dev
+### Get Started
+
+Prerequisites:
+
+- Node 19+
 <!-- 
 Here's a brief intro about what a developer must do in order to start developing
 the project further: -->
@@ -35,6 +39,7 @@ the project further: -->
 git clone https://github.com/NgoclanDoan/ecormerce_backend_nodejs.git
 cd ecormerce_backend_nodejs/
 npm install
+npm run dev
 ```
 
 <!-- And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here. -->

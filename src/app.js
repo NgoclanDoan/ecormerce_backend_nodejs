@@ -26,6 +26,10 @@ app.use(helmet());
 app.use(compression());
 
 // ========= init db =========
+require("./dbs/init.mongodb");
+
+// const { checkOverload } = require("./helpers/check.connect");
+// checkOverload();
 
 // ========= init routers =========
 app.get("/", (req, res, next) => {
