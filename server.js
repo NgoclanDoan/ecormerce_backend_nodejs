@@ -1,11 +1,15 @@
 const app = require("./src/app");
 
+const {
+  app: { port },
+} = require("./src/configs/config.mongodb");
+
 // Khai báo port
-const PORT = 3055;
+// const PORT = process.env.PORT || 3055;
 
 // Khởi động network NodeJS
-const server = app.listen(PORT, () => {
-  console.log(`Server eCommerce is running on port ${PORT}`);
+const server = app.listen(port, () => {
+  console.log(`Server eCommerce is running on port ${port}`);
 });
 
 // process.on("SIGINT", () => {
@@ -13,4 +17,3 @@ const server = app.listen(PORT, () => {
 //     console.log("Exit Server Express");
 //   });
 // });
-

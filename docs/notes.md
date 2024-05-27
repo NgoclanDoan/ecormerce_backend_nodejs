@@ -44,3 +44,10 @@ Mongoose xếp hàng các yêu cầu vượt mức cho đến kho có kết nố
 
 
 ## OS vs Process
+
+## S4. env
+
+1. .env vs config khác nhau?
+
+- config lưu được nhiều định dang, 
+- .env: dùng để lưu trữ nhữg cài đặt ứng dụng (thông tin nhạy cảm) có thể kiểm soát được code và phiên bản
