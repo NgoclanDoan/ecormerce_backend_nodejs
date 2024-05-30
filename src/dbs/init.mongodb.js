@@ -8,7 +8,6 @@ const { countConnect } = require("../helpers/check.connect");
 // const connectString = `mongodb://localhost:27017/shopDEV`;
 const connectString = `mongodb://${host}:${port}/${name}`;
 
-console.log("🚀 ~ connectString:", connectString)
 class Database {
   constructor() {
     this.connect();
