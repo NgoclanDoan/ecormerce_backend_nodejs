@@ -49,7 +49,11 @@ require("./dbs/init.mongodb");
 //     metadata: strCompress.repeat(1000000),
 //   });
 // });
-app.use("", require("./routers"));
+// app.use("", require("./routers"));
+// app.use("", require("./routers"));
+
+require("./routers")(app);
+// app.use(require("./routers"));
 
 // ========= handle errors =========
 
