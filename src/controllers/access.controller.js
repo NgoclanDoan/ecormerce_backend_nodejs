@@ -4,7 +4,6 @@ const AccessService = require("../services/access.service.lv0");
 
 class AccessController {
   signUp = async (req, res, next) => {
-    console.log("🚀 ~ AccessController ~ signUp= ~ req:", req);
     try {
       console.log(`[P]::signUp`, req.body);
       /**
