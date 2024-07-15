@@ -1,10 +1,21 @@
 "use strict";
+
+const { apiKey, permission } = require("../auth/checkAuth");
+
 // const express = require("express");
 // const router = express.Router();
 
 // router.use("/v1/api", require("./access"));
 
+
 module.exports = (app) => {
+  /**
+   * check apiKey: rule, permission
+   * 
+   */
+  app.use(apiKey);
+  app.use(permission("0000"));
+
   app.use("/v1/api", require("./access"));
 };
 
