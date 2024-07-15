@@ -1,5 +1,6 @@
 "use strict";
 
+const { CREATED } = require("../core/success.response");
 const AccessService = require("../services/access.service.lv0");
 
 class AccessController {
@@ -15,7 +16,14 @@ class AccessController {
     //   next(error);
     // }
 
-    return res.status(201).json(await AccessService.signUp(req.body));
+    // return res.status(201).json(await AccessService.signUp(req.body));
+    return new CREATED({
+      message: "Register OK!",
+      metadata: await AccessService.signUp(req.body),
+      options: {
+        limit: 10,
+      },
+    }).send(res);
   };
 }
 
