@@ -2,22 +2,25 @@
 
 const { apiKey, permission } = require("../auth/checkAuth");
 
-// const express = require("express");
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-// router.use("/v1/api", require("./access"));
+router.use(apiKey);
+router.use(permission("0000"));
+
+router.use("/v1/api", require("./access"));
 
 
-module.exports = (app) => {
-  /**
-   * check apiKey: rule, permission
-   * 
-   */
-  app.use(apiKey);
-  app.use(permission("0000"));
+// module.exports = (app) => {
+//   /**
+//    * check apiKey: rule, permission
+//    * 
+//    */
+//   app.use(apiKey);
+//   app.use(permission("0000"));
 
-  app.use("/v1/api", require("./access"));
-};
+//   app.use("/v1/api", require("./access"));
+// };
 
 // router.get("/v1/api", (req, res, next) => {
 //   const strCompress = "Hello World";
@@ -27,4 +30,4 @@ module.exports = (app) => {
 //   });
 // });
 
-// module.exports = router;
+module.exports = router;

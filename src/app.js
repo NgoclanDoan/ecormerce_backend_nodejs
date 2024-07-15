@@ -50,11 +50,19 @@ require("./dbs/init.mongodb");
 //   });
 // });
 // app.use("", require("./routers"));
-// app.use("", require("./routers"));
+app.use("/", require("./routers"));
 
-require("./routers")(app);
+// require("./routers")(app);
 // app.use(require("./routers"));
 
 // ========= handle errors =========
+app.use((error, req, res, next) => {
+  const statusCode = error.status || 500;
+  return res.status().json({
+    status: "error",
+    code: statusCode,
+    message: error.message || "Internal Server Error",
+  });
+});
 
 module.exports = app;
